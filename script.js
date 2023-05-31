@@ -2,7 +2,6 @@ function letterCombinations(digits) {
   if (digits.length === 0) {
     return [];
   }
-
   const digitToLetters = new Map([
     ['2', 'abc'],
     ['3', 'def'],
@@ -13,18 +12,14 @@ function letterCombinations(digits) {
     ['8', 'tuv'],
     ['9', 'wxyz'],
   ]);
-
   const combinations = [];
-
   function generateCombination(currentIndex, currentCombination) {
     if (currentIndex === input_digits.length) {
       combinations.push(currentCombination);
       return;
     }
-
     const currentDigit = input_digits[currentIndex];
     const letters = digitToLetters.get(currentDigit);
-
     for (let i = 0; i < letters.length; i++) {
       generateCombination(
         currentIndex + 1,
@@ -32,8 +27,6 @@ function letterCombinations(digits) {
       );
     }
   }
-
   generateCombination(0, '');
-
   return combinations.sort();
 }
