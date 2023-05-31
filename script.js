@@ -17,12 +17,12 @@ function letterCombinations(digits) {
   const combinations = [];
 
   function generateCombination(currentIndex, currentCombination) {
-    if (currentIndex === digits.length) {
+    if (currentIndex === input_digits.length) {
       combinations.push(currentCombination);
       return;
     }
 
-    const currentDigit = digits[currentIndex];
+    const currentDigit = input_digits[currentIndex];
     const letters = digitToLetters.get(currentDigit);
 
     for (let i = 0; i < letters.length; i++) {
